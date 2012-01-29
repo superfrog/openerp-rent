@@ -1363,6 +1363,9 @@ class RentOrderLine(osv.osv, ExtendedOsv):
         'duration_unit_price' : fields.function(get_prices, method=True, multi=True, type="float", string="Duration Unit Price",
             help='The price of ONE product for the entire duration.'),
         'line_price' : fields.function(get_prices, method=True, multi=True, type="float", string="Subtotal"),
+        'partner_id': fields.related('order_id','partner_id',string='Customer',readonly=True,type="many2one", relation="res.partner", store=False),
+        'date_begin_rent': fields.related('order_id','date_begin_rent',string='Rent begin date',readonly=True,type="date", store=False),
+        'date_end_rent': fields.related('order_id','date_end_rent',string='Rent end date',readonly=True,type="date", store=False)
     }
 
     _defaults = {

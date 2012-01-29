@@ -192,6 +192,10 @@
             <field name="type">tree</field>
             <field name="arch" type="xml">
                 <tree string="Rent Order Lines">
+                	<field name="order_id"/>
+                	<field name="date_begin_rent"/>
+                	<field name="date_end_rent"/>
+                	<field name="partner_id"/>
                     <field name="product_id"/>
                     <field name="quantity"/>
                     <field name="product_id_uom"/>
